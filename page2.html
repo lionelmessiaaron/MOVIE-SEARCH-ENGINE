@@ -9,10 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <script src="fetch.js"> </script>
+    
   </head>
 <body>
-
+  
 
 
     
@@ -54,41 +54,63 @@
 
 
       
-    <header>
-        <video src="C:\Users\Aaron\Desktop\projects\WEB PAGE\Project-2\video.mp4.mp4" autoplay muted>
-            
-        </video>
-    </header>
+   
 
 
-    <div class = "container">
-        <div class = "result-container">
-            <div class = "result-grid" id = "result-grid">
-                <!-- movie information here -->
-                <!-- <div class = "movie-poster">
-                    <img src = "medium-cover.jpg" alt = "movie poster">
-                </div>
-                <div class = "movie-info">
-                    <h3 class = "movie-title">Guardians of the Galaxy Vol. 2</h3>
-                    <ul class = "movie-misc-info">
-                        <li class = "year">Year: 2017</li>
-                        <li class = "rated">Ratings: PG-13</li>
-                        <li class = "released">Released: 05 May 2017</li>
-                    </ul>
-                    <p class = "genre"><b>Genre:</b> Action, Adventure, Comedy</p>
-                    <p class = "writer"><b>Writer:</b> James Gunn, Don Abnett, Andy Lanning</p>
-                    <p class = "actors"><b>Actors: </b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
-                    <p class = "plot"><b>Plot:</b> The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's ecounter with his father the ambitious celestial being Ego.</p>
-                    <p class = "language"><b>Language:</b> English</p>
-                    <p class = "awards"><b><i class = "fas fa-award"></i></b> Nominated for 1 Oscar</p>
-                </div> -->
-            </div>
-        </div>
-    </div>
+      <div id="resultGrid"></div>
+  
+      <script>
+        // Get the movie details from the query parameters
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const details = {};
+        for (const [key, value] of urlParams) {
+          details[key] = value;
+        }
+        
+        // Generate the movie details HTML
+        const resultGrid = document.getElementById('resultGrid');
+        resultGrid.innerHTML = `
+          <div class="movie-poster">
+            <img src="${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt="movie poster">
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">${(details.Title != "N/A") ? details.Title : "details.Title not found "}</h3>
+            <ul class="movie-misc-info">
+              <li class="year">Year: ${(details.Year != "N/A") ? details.Year : "details.Year"}</li>
+              <li class="rated">Ratings: ${(details.Rated != "N/A") ? details.Rated : "details.Rated.png"}</li>
+              <li class="released">Released: ${(details.Released != "N/A") ? details.Releasedr : "details.Released_not_found.png"}</li>
+            </ul>
+            <p class="genre"><b>Genre:</b> ${(details.Genre != "N/A") ? details.Genre : "image_not_found.png"}</p>
+            <p class="writer"><b>Writer:</b> ${(details.Writer != "N/A") ? details.Writer : "image_not_found.png"}</p>
+            <p class="actors"><b>Actors: </b>${(details.Actors != "N/A") ? details.Actors : "image_not_found.png"}</p>
+            <p class="plot"><b>Plot:</b> ${(details.Plot != "N/A") ? details.Plot : "image_not_found.png"}</p>
+            <p class="language"><b>Language:</b> ${(details.Language != "N/A") ? details.Language : "image_not_found.png"}</p>
+            <p class="awards"><b><i class="fas fa-award"></i></b> ${(details.Awards != "N/A") ? details.Awards : "image_not_found.png"}</p>
+          </div>
+
+           
+          const movieInfoContainer = document.querySelector('.movie-info');
+
+ 
+          const actorsElement = movieInfoContainer.querySelector('.actors');
+
+ 
+          const actorsNames = actorsElement.textContent.trim().replace('Actors:', '').split(',');
+          window.actorsNames = actorsNames;
+
+        `;
+      </script>
+    
+    <!-- end of result container -->
+
+
         <!-- end of result container -->
 
+    
 
         <div class="slider-container">
+
             <div class="slider">
                 <div class="slide">
                     <div class="image-container">
@@ -132,7 +154,7 @@
         </div>
           
     <!-- movie app js -->
-    <script src="fetch.js"> </script>
+    
     
 </body>
 
