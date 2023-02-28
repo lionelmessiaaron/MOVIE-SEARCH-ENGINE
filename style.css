@@ -132,7 +132,7 @@ form:valid a {
 }
 .search-list::-webkit-scrollbar-track{
    
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 180px rgb(241, 239, 239);
 }
 
 
@@ -292,8 +292,9 @@ form:valid a {
     background-color: #f9f5f5;
 }
   
-#about
+.about
 {
+    margin-top: 980px;
     left: 40px;
 
 }
