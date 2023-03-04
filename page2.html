@@ -70,6 +70,9 @@
         
         // Generate the movie details HTML
         const resultGrid = document.getElementById('resultGrid');
+        <div class="background-image" style="background-image: url(details.Poster)">
+        </div>
+        
         resultGrid.innerHTML = `
           <div class="movie-poster">
             <img src="${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt="movie poster">
@@ -105,11 +108,7 @@
     <!-- end of result container -->
 
 
-        <!-- end of result container -->
-
     
-
-        
 
         <div class="slider-container">
 
