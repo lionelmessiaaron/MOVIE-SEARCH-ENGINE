@@ -135,7 +135,13 @@ form:valid a {
             box-shadow: inset 0 0 180px rgb(241, 239, 239);
 }
 
-
+.search-list {
+    display: none; /* hide the search list by default */
+  }
+  
+  .search-list.show {
+    display: block; /* show the search list when the "show" class is added */
+  }
 
 
 
