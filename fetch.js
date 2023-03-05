@@ -3,6 +3,7 @@ const movieSearchBox = document.getElementsByTagName("input")[0];
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
+
 const searchInput = document.getElementById('searchbar');
 
 
@@ -23,7 +24,7 @@ async function loadMovies(searchTerm){
     const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=24b125dc`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
-    console.log(searchTerm);
+    
     // console.log(data.Search);
     if(data.Response == "True") displayMovieList(data.Search);
 }
