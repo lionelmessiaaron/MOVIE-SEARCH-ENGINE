@@ -178,6 +178,9 @@ form:valid a {
     height:auto;
     transition: transform 1s;
 }
+
+
+
 .profile-card .profile-content::before{
     content: "";
     position:absolute;
