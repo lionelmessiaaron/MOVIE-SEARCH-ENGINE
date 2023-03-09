@@ -101,6 +101,10 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 let scrollPos = 0;
 
+
+
+
+
 prevBtn.addEventListener('click', () => {
   slider.scrollLeft -= slider.offsetWidth;
 });
