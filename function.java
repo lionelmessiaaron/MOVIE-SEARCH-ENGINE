@@ -4,3 +4,5 @@ const searchInput = document.querySelector(".search input");
 searchBtn.addEventListener("click", function() {
     searchInput.focus();
 });
+
+
