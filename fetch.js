@@ -1,4 +1,4 @@
-
+// this code to fetch
 const movieSearchBox = document.getElementsByTagName("input")[0];
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
